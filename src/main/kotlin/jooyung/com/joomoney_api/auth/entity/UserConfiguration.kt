@@ -17,18 +17,12 @@ open class UserConfiguration (
     @JoinColumn(name = "user_seq")
     var userInformation: UserInformation,
 
-    @Column(name = "payday", length = 2)
-    var payday: String? = null,
-
-    @Column(name = "currency", nullable = false, length = 3)
-    var currency: String,
-
     @Column(name = "language", nullable = false, length = 5)
     var language: String,
 
     @Convert(converter = ThemeConverter::class)
     @Column(name = "theme", columnDefinition = "char(1)", nullable = false)
-    var theme: Theme = Theme.System,
+    var theme: Theme = Theme.SYSTEM,
 
     @Column(name = "reg_id", nullable = false, length = 50)
     var regId: String,

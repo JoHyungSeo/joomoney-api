@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Device Login Alert</title>
+</head>
+<body>
+<div>
+    <div style="background-color: #efefef;">
+        <div style="margin: 0px auto; max-width: 600px;">
+            <table align="center" style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td style="direction: ltr; font-size: 0px; padding: 0; text-align: center;">
+                        <div style="margin: 0px auto; max-width: 600px;">
+                            <table align="center" style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td style="direction: ltr; font-size: 0px; padding: 0; text-align: center;">
+                                        <div style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+                                            <table style="vertical-align: top;" border="0" width="100%" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td align="center" style="font-size: 0px; padding: 0; word-break: break-word;">
+                                                        <table style="min-width: 100%; max-width: 100%; width: 100px; border-collapse: collapse; border-spacing: 0px;" border="0" cellspacing="0" cellpadding="0">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <img
+                                                                            style="border: 0; display: block; outline: none; text-decoration: none; height: auto; min-width: 100%; width: 100%; max-width: 100%; font-size: 13px;"
+                                                                            th:src="${imageBaseUrl} + '/assets/images/email-sender/banner.png'"
+                                                                            width="100"
+                                                                            height="auto"
+                                                                            loading="lazy"
+                                                                    />
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="background: #ffffff; background-color: #ffffff; margin: 0px auto; max-width: 600px;">
+            <table align="center" style="background: #ffffff; background-color: #ffffff; width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td style="direction: ltr; font-size: 0px; padding: 5px 5px 5px 5px; text-align: center;">
+                        <div style="margin: 0px auto; max-width: 590px;">
+                            <table align="center" style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td style="direction: ltr; font-size: 0px; padding: 5px 5px 5px 5px; text-align: center;">
+                                        <div style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+                                            <table style="vertical-align: top;" border="0" width="100%" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td align="left" style="font-size: 0px; padding: 5px 5px 10px 5px; padding-bottom: 10px; word-break: break-word;">
+                                                        <div style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 20px; font-weight: 900; line-height: 25px; text-align: left; color: #000000;">
+                                                            <span><span>New Device or IP Login Detected on Your Account</span></span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td align="left" style="background: #ffffff; font-size: 0px; padding: 5px 5px 5px 5px; word-break: break-word;">
+                                                        <div style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 14px; line-height: 20px; text-align: left; color: #000000;">
+                                                            <div>We detected a login to your account
+                                                                <a
+                                                                        href="mailto:[[${email}]]"
+                                                                        style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; color: #f0b90b;"
+                                                                        rel="noreferrer noopener"
+                                                                        target="_blank"
+                                                                >[[${email}]]</a> from a new device or IP address. If this was not you, please change your password or temporarily disable your account immediately.&nbsp;
+                                                                <br>
+                                                                <br>
+                                                                <div>
+                                                                    <strong>Time:</strong>
+                                                                    [[${time}]]
+                                                                    <br>
+                                                                    <strong>Device:</strong>
+                                                                    [[${device}]]
+                                                                </div>
+                                                                <div>
+                                                                    <strong>IP Address:</strong>
+                                                                    [[${ip}]]
+                                                                    <br>
+                                                                    <div>
+                                                                        <strong>Location:</strong>
+                                                                        [[${location}]]&nbsp;
+                                                                        <br>
+                                                                        <br>
+                                                                        <em>
+                                                                            Note: The location is based on IP data provided by a third-party service and may not be entirely accurate.&nbsp;
+                                                                            <br>
+                                                                            <br>
+                                                                        </em>
+                                                                    </div>
+                                                                </div>
+                                                                <span>
+                                                                    <a
+                                                                            href="#"
+                                                                            style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; display: inline-flex; margin: 0; padding: 10px 25px; font-size: 14px; font-weight: 900; text-decoration: none; text-transform: none; color: #000000; border-radius: 3px; background-color: #fcd535;"
+                                                                            rel="noreferrer noopener"
+                                                                            target="_blank"
+                                                                    >Check Account Activity</a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="background-color: #efefef;">
+        <div style="background: #ffffff; background-color: #ffffff; margin: 0px auto; max-width: 600px;">
+            <table align="center" style="background: #ffffff; background-color: #ffffff; width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td style="border: 0 none #000000; direction: ltr; font-size: 0px; padding: 5px 5px 5px 5px; text-align: center;">
+                        <div style="margin: 0px auto; max-width: 590px;">
+                            <table align="center" style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td style="direction: ltr; font-size: 0px; padding: 5px 5px 5px 5px; text-align: center;">
+                                        <div style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+                                            <table style="vertical-align: top;" border="0" width="100%" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td align="center" style="font-size: 0px; padding: 5px 5px 5px 5px; word-break: break-word;">&nbsp;</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="background-color: #efefef;">
+        <div style="background-color: #ffffff; margin: 0px auto; max-width: 600px;">&nbsp;</div>
+
+        <div style="background: #ffffff; background-color: #ffffff; margin: 0px auto; max-width: 600px;">
+            <table align="center" style="background: #ffffff; background-color: #ffffff; width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td style="border: 0 none #000000; direction: ltr; font-size: 0px; padding: 5px 5px 5px 5px; text-align: center;">
+                        <div style="margin: 0px auto; max-width: 590px;">
+                            <table align="center" style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td style="direction: ltr; font-size: 0px; padding: 5px 5px 5px 5px; text-align: center;">
+                                        <div style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+                                            <table style="vertical-align: top;" border="0" width="100%" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td align="center" style="font-size: 0px; padding: 5px 5px 5px 5px; word-break: break-word;">
+                                                        <p style="border-top: solid 1px #f0b90b; font-size: 1px; margin: 0px auto; width: 100%;">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td align="center" style="font-size: 0px; padding: 5px 5px 5px 5px; word-break: break-word;">
+                                                        <div style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 14px; font-weight: 900; line-height: 20px; text-align: center; color: #f0b90b;">Stay connected!</div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="font-size: 0px; word-break: break-word;">
+                                                        <div style="font-size: 0; line-height: 0; text-align: left; display: inline-block; width: 100%; direction: ltr;">
+                                                            <div style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+                                                                <table style="vertical-align: top;" border="0" width="100%" cellspacing="0" cellpadding="0">
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td align="center" style="font-size: 0px; padding: 5px 5px 5px 5px; word-break: break-word;">
+                                                                            <table align="center" style="float: none; display: inline-table;" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td style="padding: 4px; vertical-align: middle;">
+                                                                                        <table style="border-radius: 3px; width: 20px;" border="0" cellspacing="0" cellpadding="0">
+                                                                                            <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding: 0px 5px; font-size: 0; height: 20px; vertical-align: middle; width: 20px;">
+                                                                                                    <a href="#" target="_blank" rel="noreferrer noopener">
+                                                                                                        <img style="border-radius: 3px; display: block;" th:src="${imageBaseUrl} + '/assets/images/email-sender/social/x_logo.png'" width="20" height="20" loading="lazy" />
+                                                                                                    </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                            <table align="center" style="float: none; display: inline-table;" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td style="padding: 4px; vertical-align: middle;">
+                                                                                        <table style="border-radius: 3px; width: 20px;" border="0" cellspacing="0" cellpadding="0">
+                                                                                            <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding: 0px 5px; font-size: 0; height: 20px; vertical-align: middle; width: 20px;">
+                                                                                                    <a href="#" target="_blank" rel="noreferrer noopener">
+                                                                                                        <img style="border-radius: 3px; display: block;" th:src="${imageBaseUrl} + '/assets/images/email-sender/social/telegram.png'" width="20" height="20" loading="lazy" />
+                                                                                                    </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                            <table align="center" style="float: none; display: inline-table;" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td style="padding: 4px; vertical-align: middle;">
+                                                                                        <table style="border-radius: 3px; width: 20px;" border="0" cellspacing="0" cellpadding="0">
+                                                                                            <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding: 0px 5px; font-size: 0; height: 20px; vertical-align: middle; width: 20px;">
+                                                                                                    <a href="#" target="_blank" rel="noreferrer noopener">
+                                                                                                        <img style="border-radius: 3px; display: block;" th:src="${imageBaseUrl} + '/assets/images/email-sender/social/facebook.png'" width="20" height="20" loading="lazy" />
+                                                                                                    </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                            <table align="center" style="float: none; display: inline-table;" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td style="padding: 4px; vertical-align: middle;">
+                                                                                        <table style="border-radius: 3px; width: 20px;" border="0" cellspacing="0" cellpadding="0">
+                                                                                            <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding: 0px 5px; font-size: 0; height: 20px; vertical-align: middle; width: 20px;">
+                                                                                                    <a href="#" target="_blank" rel="noreferrer noopener">
+                                                                                                        <img style="border-radius: 3px; display: block;" th:src="${imageBaseUrl} + '/assets/images/email-sender/social/linkedin.png'" width="20" height="20" loading="lazy" />
+                                                                                                    </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                            <table align="center" style="float: none; display: inline-table;" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td style="padding: 4px; vertical-align: middle;">
+                                                                                        <table style="border-radius: 3px; width: 20px;" border="0" cellspacing="0" cellpadding="0">
+                                                                                            <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding: 0px 5px; font-size: 0; height: 20px; vertical-align: middle; width: 20px;">
+                                                                                                    <a href="#" target="_blank" rel="noreferrer noopener">
+                                                                                                        <img style="border-radius: 3px; display: block;" th:src="${imageBaseUrl} + '/assets/images/email-sender/social/youtube.png'" width="20" height="20" loading="lazy" />
+                                                                                                    </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                            <table align="center" style="float: none; display: inline-table;" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td style="padding: 4px; vertical-align: middle;">
+                                                                                        <table style="border-radius: 3px; width: 20px;" border="0" cellspacing="0" cellpadding="0">
+                                                                                            <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding: 0px 5px; font-size: 0; height: 20px; vertical-align: middle; width: 20px;">
+                                                                                                    <a href="#" target="_blank" rel="noreferrer noopener">
+                                                                                                        <img style="border-radius: 3px; display: block;" th:src="${imageBaseUrl} + '/assets/images/email-sender/social/reddit.png'" width="20" height="20" loading="lazy" />
+                                                                                                    </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                            <table align="center" style="float: none; display: inline-table;" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <td style="padding: 4px; vertical-align: middle;">
+                                                                                        <table style="border-radius: 3px; width: 20px;" border="0" cellspacing="0" cellpadding="0">
+                                                                                            <tbody>
+                                                                                            <tr>
+                                                                                                <td style="padding: 0px 5px; font-size: 0; height: 20px; vertical-align: middle; width: 20px;">
+                                                                                                    <a href="#" target="_blank" rel="noreferrer noopener">
+                                                                                                        <img style="border-radius: 3px; display: block;" th:src="${imageBaseUrl} + '/assets/images/email-sender/social/instagram.png'" width="20" height="20" loading="lazy" />
+                                                                                                    </a>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <!--                                                                    <tr>-->
+                                                                    <!--                                                                        <td style="font-size: 0px; word-break: break-word;">-->
+                                                                    <!--                                                                            <div style="font-size: 0; line-height: 0; text-align: left; display: inline-block; width: 100%; direction: ltr;">-->
+                                                                    <!--                                                                                <div style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 50%;">-->
+                                                                    <!--                                                                                    <table style="vertical-align: top;" border="0" width="100%" cellspacing="0" cellpadding="0">-->
+                                                                    <!--                                                                                        <tbody>-->
+                                                                    <!--                                                                                        <tr>-->
+                                                                    <!--                                                                                            <td align="left" style="font-size: 0px; padding: 5px 5px 5px 5px; word-break: break-word;">-->
+                                                                    <!--                                                                                                <div style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 11px; line-height: 20px; text-align: left; color: #000000;">-->
+                                                                    <!--                                                                                                    <span>To stay secure, setup your anti-phishing code </span>-->
+                                                                    <!--                                                                                                    <a-->
+                                                                    <!--                                                                                                            href="#"-->
+                                                                    <!--                                                                                                            style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; color: #f0b90b;"-->
+                                                                    <!--                                                                                                            rel="noreferrer noopener"-->
+                                                                    <!--                                                                                                            target="_blank"-->
+                                                                    <!--                                                                                                    >here</a>-->
+                                                                    <!--                                                                                                </div>-->
+                                                                    <!--                                                                                            </td>-->
+                                                                    <!--                                                                                        </tr>-->
+                                                                    <!--                                                                                        </tbody>-->
+                                                                    <!--                                                                                    </table>-->
+                                                                    <!--                                                                                </div>-->
+
+                                                                    <!--                                                                                <div style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 50%;">-->
+                                                                    <!--                                                                                    <table style="vertical-align: top;" border="0" width="100%" cellspacing="0" cellpadding="0">-->
+                                                                    <!--                                                                                        <tbody>-->
+                                                                    <!--                                                                                        <tr>-->
+                                                                    <!--                                                                                            <td align="left" style="font-size: 0px; padding: 5px 5px 11px 5px; padding-bottom: 11px; word-break: break-word;">-->
+                                                                    <!--                                                                                                <div style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 14px; line-height: 20px; text-align: left; color: #000000;"></div>-->
+                                                                    <!--                                                                                            </td>-->
+                                                                    <!--                                                                                        </tr>-->
+                                                                    <!--                                                                                        </tbody>-->
+                                                                    <!--                                                                                    </table>-->
+                                                                    <!--                                                                                </div>-->
+                                                                    <!--                                                                            </div>-->
+                                                                    <!--                                                                        </td>-->
+                                                                    <!--                                                                    </tr>-->
+
+                                                                    <tr>
+                                                                        <td align="left" style="font-size: 0px; padding: 5px 5px 5px 5px; word-break: break-word;">
+                                                                            <div style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 11px; line-height: 15px; text-align: left; color: #000000;">
+                                                                                <div>
+                                                                                    <!--                                                                                    <div>-->
+                                                                                    <!--                                                                                        <strong>Disclaimer: </strong>-->
+                                                                                    <!--                                                                                        Digital asset prices are subject to high market risk and price volatility. The value of your investment may go down or up, and you may not get back the amount invested. You are solely responsible for your investment decisions and Joomoney is not liable for any losses you may incur. Past performance is not a reliable predictor of future performance. You should only invest in products you are familiar with and where you understand the risks. You should carefully consider your investment experience, financial situation, investment objectives and risk tolerance and consult an independent financial adviser prior to making any investment. This material should not be construed as financial advice. For more information, see our-->
+                                                                                    <!--                                                                                        <span style="color: #f1c40f;">-->
+                                                                                    <!--                                                                                            <a-->
+                                                                                    <!--                                                                                                    href="#"-->
+                                                                                    <!--                                                                                                    style="color: #f1c40f;"-->
+                                                                                    <!--                                                                                                    rel="noreferrer noopener"-->
+                                                                                    <!--                                                                                                    target="_blank"-->
+                                                                                    <!--                                                                                            >Terms of Use</a>-->
+                                                                                    <!--                                                                                        </span>&nbsp;and&nbsp;-->
+                                                                                    <!--                                                                                        <span style="color: #f1c40f;">-->
+                                                                                    <!--                                                                                            <a-->
+                                                                                    <!--                                                                                                    href="#"-->
+                                                                                    <!--                                                                                                    style="color: #f1c40f;"-->
+                                                                                    <!--                                                                                                    rel="noreferrer noopener"-->
+                                                                                    <!--                                                                                                    target="_blank"-->
+                                                                                    <!--                                                                                            >Risk Warning</a>-->
+                                                                                    <!--                                                                                        </span>.-->
+                                                                                    <!--                                                                                        <br><br>-->
+                                                                                    <!--                                                                                    </div>-->
+
+                                                                                    <div>
+                                                                                        <strong>Kindly note: </strong>
+                                                                                        Please be aware of phishing sites and always make sure you are visiting the official
+                                                                                        <a
+                                                                                                href="https://joomoney.me"
+                                                                                                style="color: #f1c40f;"
+                                                                                                rel="noreferrer noopener"
+                                                                                                target="_blank"
+                                                                                        >joomoney.me</a>
+                                                                                        website when entering sensitive data.
+                                                                                        <br><br>
+                                                                                        <div>
+                                                                                            You have received this email as a registered user of&nbsp;
+                                                                                            <a href="https://joomoney.me" rel="noreferrer noopener" target="_blank">
+                                                                                                <span style="color: #f1c40f;">joomoney.me</span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            For more information about how we process data, please see our&nbsp;
+                                                                                            <a href="#" rel="noreferrer noopener" target="_blank">
+                                                                                                <span style="color: #f1c40f;">Privacy policy</span>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin: 0px auto; max-width: 590px;">
+            <table align="center" style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td style="direction: ltr; font-size: 0px; padding: 5px 5px 5px 5px; text-align: center;">
+                        <div style="font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+                            <table style="vertical-align: top;" border="0" width="100%" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td align="center" style="font-size: 0px; padding: 5px 5px 5px 5px; word-break: break-word;">
+                                        <div style="font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 11px; line-height: 15px; text-align: center; color: #000000;">© 2025 Joomoney.me, All Rights Reserved.</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

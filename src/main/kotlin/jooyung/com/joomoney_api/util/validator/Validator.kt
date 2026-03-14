@@ -1,6 +1,6 @@
 package jooyung.com.joomoney_api.util.validator
 
-import jooyung.com.joomoney_api.JoomoneyConstants
+import jooyung.com.joomoney_api.Constants
 import jooyung.com.joomoney_api.common.repository.CommonRepository
 import jooyung.com.joomoney_api.enum.gender.Gender
 import jooyung.com.joomoney_api.enum.theme.Theme
@@ -17,11 +17,22 @@ class Validator(
 
     fun userId(userId: String) {
         if (userId.isBlank()) throw ApiException(ResultCode.ERR_USER_ID_IS_EMPTY)
-        if (userId.length > 50) throw ApiException(ResultCode.ERR_USER_ID_IS_OVER_50_CHAR)
+        if (userId.length !in 2..50) throw ApiException(ResultCode.ERR_USER_ID_IS_OVER_50_AND_UNDER_2_CHAR)
+
+        val regex = Regex("^[a-zA-Z0-9][a-zA-Z0-9 .-_]{1,49}$")
+        if (!regex.matches(userId)) {
+            throw ApiException(ResultCode.ERR_USER_ID_IS_INVALID)
+        }
     }
 
     fun name(name: String) {
         if (name.isBlank()) throw ApiException(ResultCode.ERR_NAME_IS_EMPTY)
+
+        val regex = Regex("^(?:\\p{L}|\\p{L}\\.|\\p{L}[\\p{L}\\p{M}\\-'. ]*\\p{L})$")
+        if (!regex.matches(name)) {
+            throw ApiException(ResultCode.ERR_NAME_IS_INVALID)
+        }
+
         if (name.length > 50) throw ApiException(ResultCode.ERR_NAME_IS_OVER_50_CHAR)
     }
 
@@ -72,31 +83,10 @@ class Validator(
         }
     }
 
-    fun payday(payday: String?) {
-        if (payday.isNullOrBlank()) return
-
-        val day = payday.toIntOrNull()
-            ?: throw ApiException(ResultCode.ERR_PAYDAY_IS_NOT_NUMBER)
-
-        if (day !in 1..31) {
-            throw ApiException(ResultCode.ERR_PAYDAY_IS_OUT_OF_RANGE)
-        }
-    }
-
-    fun currency(currency: String) {
-        if (currency.isBlank()) throw ApiException(ResultCode.ERR_CURRENCY_IS_EMPTY)
-
-        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(JoomoneyConstants.GROUP_CURRENCY, currency)
-
-        if (!exists) {
-            throw ApiException(ResultCode.ERR_CURRENCY_IS_INVALID)
-        }
-    }
-
     fun language(language: String) {
         if (language.isBlank()) throw ApiException(ResultCode.ERR_LANGUAGE_IS_EMPTY)
 
-        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(JoomoneyConstants.GROUP_LANGUAGE, language)
+        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(Constants.GROUP_LANGUAGE, language)
 
         if (!exists) {
             throw ApiException(ResultCode.ERR_LANGUAGE_IS_INVALID)
@@ -121,7 +111,7 @@ class Validator(
     fun deviceType(deviceType: String) {
         if (deviceType.isBlank()) throw ApiException(ResultCode.ERR_DEVICE_TYPE_IS_EMPTY)
 
-        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(JoomoneyConstants.GROUP_DEVICE, deviceType)
+        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(Constants.GROUP_DEVICE, deviceType)
 
         if (!exists) {
             throw ApiException(ResultCode.ERR_DEVICE_TYPE_IS_INVALID)
@@ -131,7 +121,7 @@ class Validator(
     fun os(os: String) {
         if (os.isBlank()) throw ApiException(ResultCode.ERR_OS_IS_EMPTY)
 
-        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(JoomoneyConstants.GROUP_OS, os)
+        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(Constants.GROUP_OS, os)
 
         if (!exists) {
             throw ApiException(ResultCode.ERR_OS_IS_INVALID)
@@ -141,7 +131,7 @@ class Validator(
     fun platform(platform: String) {
         if (platform.isBlank()) throw ApiException(ResultCode.ERR_PLATFORM_IS_EMPTY)
 
-        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(JoomoneyConstants.GROUP_PLATFORM, platform)
+        val exists = commonRepository.existsByCommonCodeGroup_GroupCdAndCode(Constants.GROUP_PLATFORM, platform)
 
         if (!exists) {
             throw ApiException(ResultCode.ERR_PLATFORM_IS_INVALID)

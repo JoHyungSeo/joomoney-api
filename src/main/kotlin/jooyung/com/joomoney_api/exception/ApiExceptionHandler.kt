@@ -35,6 +35,7 @@ class ApiExceptionHandler {
             code = resultCode.code,
             message = ex.message ?: resultCode.message,
             status = resultCode.status,
+            data = ex.data
         )
 
         return ResponseEntity.status(httpStatus)

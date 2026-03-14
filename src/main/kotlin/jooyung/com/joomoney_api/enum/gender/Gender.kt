@@ -6,10 +6,8 @@ enum class Gender(val code: Char) {
     OTHER('O');
 
     companion object {
-        fun fromCode(code: Char?): Gender? =
-            entries.find { it.code == code }
+        fun fromCode(code: Char?): Gender? = entries.find { it.code == code }
 
-        fun fromName(name: String?): Gender? =
-            entries.find { it.name.equals(name, ignoreCase = true) }
+        fun fromName(name: String?): Gender? = entries.find { it.name.equals(name, ignoreCase = true) }
     }
 }

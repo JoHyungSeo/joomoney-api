@@ -1,6 +1,6 @@
 package jooyung.com.joomoney_api.auth.dto.request
 
-data class EmailVerifyValidateRequest (
-    val email: String,
+data class PasswordResetValidateDto(
+    val userId: String,
     val code: String
 )

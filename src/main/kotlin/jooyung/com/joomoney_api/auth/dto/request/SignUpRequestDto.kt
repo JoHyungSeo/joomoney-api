@@ -1,6 +1,8 @@
 package jooyung.com.joomoney_api.auth.dto.request
 
 import jooyung.com.joomoney_api.auth.dto.DeviceInformationDto
+import jooyung.com.joomoney_api.auth.dto.UserConfigurationDto
+import jooyung.com.joomoney_api.enum.gender.Gender
 import java.time.LocalDate
 
 data class SignUpRequestDto (
@@ -10,10 +12,7 @@ data class SignUpRequestDto (
     val verificationToken: String,
     val password: String,
     val birthday: LocalDate?,
-    val gender: String?,
-    val payday: String?,
-    val currency: String,
-    val language: String,
-    val theme: String,
-    val deviceInformationDto: DeviceInformationDto
+    val gender: Gender?,
+    val userConfiguration: UserConfigurationDto,
+    val deviceInformation: DeviceInformationDto
 )

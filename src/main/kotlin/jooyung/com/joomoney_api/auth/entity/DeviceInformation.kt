@@ -11,6 +11,10 @@ open class DeviceInformation (
     @Column(name = "device_seq", nullable = false)
     var deviceSeq: Long = 0L,
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_seq", nullable = false)
+    var userInformation: UserInformation,
+
     @Column(name = "device_id", nullable = false, length = 36)
     var deviceId: String,
 
@@ -25,6 +29,12 @@ open class DeviceInformation (
 
     @Column(name = "ip", nullable = false, length = 128)
     var ip: String,
+
+    @Column(name = "first_login_dt", nullable = false)
+    var firstLoginDt: LocalDateTime = LocalDateTime.now(),
+
+    @Column(name = "last_login_dt", nullable = false)
+    var lastLoginDt: LocalDateTime? = null,
 
     @Column(name = "reg_dt", nullable = false)
     var regDt: LocalDateTime = LocalDateTime.now()
